@@ -1,8 +1,8 @@
 const state = {
-  collects: []
+  collects: [] // 初始化一个colects数组
 }
-const getter = {
-  renderCollects (state) {
+const getters = {
+  renderCollects (state) { // 承载变化的collects
     return state.collects
   }
 }
@@ -11,8 +11,15 @@ const mutations = {
     state.collects.push(items)
   }
 }
+const actions = {
+  invokePushItems (context, item) { // 触发mutations里面的pushCollects ,传入数据形参item 对应到items
+    context.commit('pushCollects', item)
+  }
+}
 export default {
+  namespaced: true, // 用于在全局引用此文件里的方法时标识这一个的文件名
   state,
-  getter,
-  mutations
+  getters,
+  mutations,
+  actions
 }
