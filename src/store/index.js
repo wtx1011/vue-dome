@@ -1,7 +1,5 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import footerStatus from './modules/footerStatus'
-import collection from './modules/collection'
 Vue.use(Vuex)
 // const state = {// 要设置的全局访问的state对象
 //   token: null,
@@ -41,11 +39,15 @@ Vue.use(Vuex)
 //     context.commit('newNum', num)
 //   }
 // }
+const files = require.context('./modules', false, /\.js$/)
+const modules = {}
+
+files.keys().forEach(key => {
+  modules[key.replace(/(\.\/|\.js)/g, '')] = files(key).default
+})
+
 const store = new Vuex.Store({
-  modules: {
-    footerStatus,
-    collection
-  }
+  modules
   // state,
   // getters,
   // mutations,
