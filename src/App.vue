@@ -6,6 +6,7 @@
       <button @click="setCl">删除</button>
     <div v-if="isShow" class="ya">
       我是底部，哈哈哈，你看到我了吗
+      <span>{{mag | formatDate}}</span>
     </div>
     <section class="joinState">
       <div class="joinStateHead">
@@ -24,6 +25,7 @@ export default {
   name: 'App',
   data () {
     return {
+      mag: '1563158846',
       item: {
         id: '01',
         productName: '苹果',

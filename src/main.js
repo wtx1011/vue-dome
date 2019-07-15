@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import store from './store' // 导入vuex文件
 import api from './api/api' // 导入api接口
+import '@/plugins/filters' // 过滤器
 
 Vue.config.productionTip = false
 Vue.prototype.$api = api // 将api挂载到vue的原型上
