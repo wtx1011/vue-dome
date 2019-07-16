@@ -1,5 +1,6 @@
 'use strict'
 module.exports = {
   NODE_ENV: '"production"',
-  // HOST: '""' + HOST + '""'
+  EVN_CONFIG: '"prod"',
+  API_ROOT: '"/apis/v1"'
 }
